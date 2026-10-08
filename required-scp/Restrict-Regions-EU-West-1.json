@@ -1,0 +1,70 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyAllOutsideEUWest1",
+            "Effect": "Deny",
+            "NotAction": [
+                "account:*",
+                "acm:*",
+                "aws-marketplace-management:*",
+                "aws-marketplace:*",
+                "aws-portal:*",
+                "billing:*",
+                "budgets:*",
+                "ce:*",
+                "cloudfront:*",
+                "cur:*",
+                "directconnect:*",
+                "ec2:DescribeRegions",
+                "ec2:DescribeTransitGateways",
+                "ec2:DescribeVpnGateways",
+                "fms:*",
+                "freetier:*",
+                "globalaccelerator:*",
+                "health:*",
+                "iam:*",
+                "importexport:*",
+                "invoicing:*",
+                "mobileanalytics:*",
+                "networkmanager:*",
+                "organizations:*",
+                "payments:*",
+                "pricing:*",
+                "route53:*",
+                "route53domains:*",
+                "route53-recovery-cluster:*",
+                "route53-recovery-control-config:*",
+                "route53-recovery-readiness:*",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAllMyBuckets",
+                "s3:ListMultiRegionAccessPoints",
+                "s3:PutAccountPublicAccessBlock",
+                "shield:*",
+                "sts:*",
+                "support:*",
+                "tax:*",
+                "trustedadvisor:*",
+                "waf:*",
+                "wafv2:*",
+                "wellarchitected:*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:RequestedRegion": [
+                        "eu-west-1"
+                    ]
+                },
+                "Bool": {
+                    "aws:PrincipalIsAWSService": "false"
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/BreakGlassAdmin"
+                    ]
+                }
+            }
+        }
+    ]
+}
