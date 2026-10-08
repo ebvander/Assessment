@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # security-scan
 
 A lightweight security scanner that combines **SAST, dependency, secrets and IaC checks** into a single report with a **PASS** or **FAIL** result.
@@ -131,7 +130,6 @@ examples/
 tests/
 ```
 
-Test credentials in the example applications are fake and must never be used in a real environment.
-=======
-
->>>>>>> 11a54ada2f1c3c8a403715a00f480547c776fb2d
+Test credentials in the example applications are fake:
+* test_app_security.py
+* app.py
