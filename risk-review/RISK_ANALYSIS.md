@@ -2,7 +2,7 @@
 
 **Scope:** Annexures A and B (SSM automation), Annexures C and D (RDS access)
 **Region:** eu-west-1
-**Assumption:** The organisation wide SCP `DenyAllOutsideEUWest1` stays in place.
+**Assumption:** The organisation wide SCP DenyAllOutsideEUWest1 stays in place.
 
 **What the SCP does and does not cover**
 
